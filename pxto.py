@@ -303,6 +303,8 @@ def Now():
 def RunDirect():
 	if len(sys.argv)!=3:
 		print 'Error: Pxto requires 2 arguments','('+str(len(sys.argv)-1)+' given).'
+	elif sys.argv[1] not in ExpressList:
+		print 'Error: %s is not supported.'%sys.argv[1]
 	else:
 		Request=requests.get(UrlBase0+sys.argv[1]+UrlBase2+sys.argv[2])
 		if Request.status_code==200:
